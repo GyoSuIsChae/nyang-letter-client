@@ -4,7 +4,7 @@ import styles from './home-page.module.css';
 const Home = () => {
   return (
     <div className={styles.container}>
-      <p>Home</p>
+      <p>Nyang Letter 시작</p>
     </div>
   );
 };
