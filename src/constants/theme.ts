@@ -1,3 +1,5 @@
+// @TODO: 소소가 디자인 시스템 정의해 주면 전부 변경 예정
+
 const FONT_SIZES_TYPE = {
   XS: 'xs',
   SM: 'sm',
