@@ -1,12 +1,20 @@
 import React from 'react';
 
-import styles from './home-page.module.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
 
 const Home = () => {
   return (
-    <div className={styles.container}>
+    <Container>
       <p>Nyang Letter 시작</p>
-    </div>
+    </Container>
   );
 };
 
