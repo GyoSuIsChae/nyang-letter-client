@@ -30,7 +30,7 @@ const COLORS_TYPE = {
 const COLORS = {
   [COLORS_TYPE.BLACK_100]: '#141515',
   [COLORS_TYPE.BLACK_200]: '#252628',
-};
+} as const;
 
 const Z_INDEX_LAYER_TYPE = {
   LEVEL_1: 'level1',
