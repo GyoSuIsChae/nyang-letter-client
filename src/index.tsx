@@ -4,8 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';
+import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from '@styles/globalStyles';
+import theme from '@styles/theme';
 
 import App from './App';
 
@@ -18,10 +20,12 @@ const queryClient = new QueryClient();
 root.render(
   <QueryClientProvider client={queryClient}>
     <RecoilRoot>
-      <GlobalStyles />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
     </RecoilRoot>
   </QueryClientProvider>,
 );
