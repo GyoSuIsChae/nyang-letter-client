@@ -6,8 +6,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from 'styled-components';
 
-import GlobalStyles from '@styles/globalStyles';
-import theme from '@styles/theme';
+import GlobalStyles from '@styles/GlobalStyles';
+import theme from '@styles/Theme';
 
 import App from './App';
 

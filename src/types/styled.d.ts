@@ -5,7 +5,7 @@ import {
   FONT_WEIGHTS_TYPE,
   COLORS_TYPE,
   Z_INDEX_LAYER_TYPE,
-} from '@constants/theme';
+} from '@constants/Theme';
 
 declare module 'styled-components' {
   declare module 'react' {
