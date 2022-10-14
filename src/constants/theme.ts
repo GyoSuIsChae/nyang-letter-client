@@ -29,13 +29,31 @@ const FONT_WEIGHTS = {
 } as const;
 
 const COLORS_TYPE = {
-  BLACK_100: 'black100',
-  BLACK_200: 'black200',
+  BLOWN: 'blown',
+  GRAY_1: 'gray1',
+  GRAY_2: 'gray2',
+  GRAY_3: 'gray3',
+  GRAY_4: 'gray4',
+  GRAY_5: 'gray5',
+  WHITE: 'white',
+  WHITE_GRAY_1: 'white_gray1',
+  WHITE_GRAY_2: 'white_gray2',
+  BLACK: 'black',
+  RED: 'red',
 };
 
 const COLORS = {
-  [COLORS_TYPE.BLACK_100]: '#141515',
-  [COLORS_TYPE.BLACK_200]: '#252628',
+  [COLORS_TYPE.BLOWN]: '#2D2218',
+  [COLORS_TYPE.GRAY_1]: '#D5D3D1',
+  [COLORS_TYPE.GRAY_2]: '#ABA7A3',
+  [COLORS_TYPE.GRAY_3]: '#817A75',
+  [COLORS_TYPE.GRAY_4]: '#615A52',
+  [COLORS_TYPE.GRAY_5]: '#4C433B',
+  [COLORS_TYPE.WHITE]: '#FFFFFF',
+  [COLORS_TYPE.WHITE_GRAY_1]: '#EEEEEE',
+  [COLORS_TYPE.WHITE_GRAY_2]: '#D1D1D1',
+  [COLORS_TYPE.BLACK]: '#000000',
+  [COLORS_TYPE.RED]: '#FF0000',
 } as const;
 
 const Z_INDEX_LAYER_TYPE = {
