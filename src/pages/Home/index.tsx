@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import TX from '@components/Text';
+import { TX, TextCSS } from '@components/Text';
 
 const Container = styled.div`
   display: flex;
@@ -10,10 +10,15 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  gap: 2em;
 `;
 
 const BodyText = styled(TX.Body1)`
   text-align: center;
+`;
+
+const TestButton = styled.button`
+  ${TextCSS.Body3}
 `;
 
 const Home = () => {
@@ -24,6 +29,8 @@ const Home = () => {
         <br />
         닉네임을 입력해 주세요!
       </BodyText>
+
+      <TestButton onClick={() => {}}>TextCSS 활용 예시</TestButton>
     </Container>
   );
 };
