@@ -3,11 +3,17 @@
 const FONT_SIZES_TYPE = {
   XS: 'xs',
   SM: 'sm',
+  MD: 'md',
+  LG: 'lg',
+  XL: 'xl',
 } as const;
 
 const FONT_SIZES = {
   [FONT_SIZES_TYPE.XS]: 14,
   [FONT_SIZES_TYPE.SM]: 15,
+  [FONT_SIZES_TYPE.MD]: 16,
+  [FONT_SIZES_TYPE.LG]: 18,
+  [FONT_SIZES_TYPE.XL]: 24,
 } as const;
 
 const FONT_WEIGHTS_TYPE = {
