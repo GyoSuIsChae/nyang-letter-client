@@ -2,6 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import TX from '@components/Text';
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,10 +12,18 @@ const Container = styled.div`
   height: 100vh;
 `;
 
+const BodyText = styled(TX.Body1)`
+  text-align: center;
+`;
+
 const Home = () => {
   return (
     <Container>
-      <p>Nyang Letter 시작</p>
+      <BodyText>
+        냥레터에서 사용할
+        <br />
+        닉네임을 입력해 주세요!
+      </BodyText>
     </Container>
   );
 };
