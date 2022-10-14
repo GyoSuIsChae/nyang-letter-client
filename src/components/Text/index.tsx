@@ -30,4 +30,4 @@ const TX = {
   Body3,
 };
 
-export default TX;
+export { TX, TextCSS };
