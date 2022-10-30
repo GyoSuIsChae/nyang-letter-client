@@ -3,8 +3,8 @@ import { CSSTransition } from 'react-transition-group';
 
 import styled from 'styled-components';
 
-import modalTest from '@assets/images/modal_test.png';
-import modalTest2 from '@assets/images/modal_test2.png';
+// import modalTest from '@assets/images/modal_test.png';
+// import modalTest2 from '@assets/images/modal_test2.png';
 import Portal from '@components/Portal';
 
 const transitionName = `Modal`;
@@ -64,14 +64,17 @@ interface ModalProps {
   test?: boolean;
 }
 
+/*
+  // background-image: url(${(props) => (props.test ? modalTest : modalTest2)});
+  //background-position: center;
+  //background-size: cover;
+  //background-repeat: no-repeat;
+ */
+
 const ModalWrapper = styled.div<ModalProps>`
-  //border-radius: 8px;
-  //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  //background: #fff;
-  background-image: url(${(props) => (props.test ? modalTest : modalTest2)});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
 
   max-height: calc(100vh - 16px);
   overflow: hidden auto;
@@ -126,17 +129,17 @@ interface IProps {
 }
 
 const CommonModal = ({
-  children,
-  selector,
+  children = null,
+  selector = undefined,
   isOpen,
   onClose,
   appearDuration = 300,
-  modalIcon,
-  title,
-  description,
-  cancel,
-  confirm,
-  onConfirm,
+  modalIcon = null,
+  title = '',
+  description = '',
+  cancel = '',
+  confirm = '',
+  onConfirm = () => {},
 }: IProps) => {
   return (
     <CSSTransition
@@ -182,18 +185,6 @@ const CommonModal = ({
       </Portal>
     </CSSTransition>
   );
-};
-
-CommonModal.defaultProps = {
-  children: null,
-  selector: undefined,
-  appearDuration: 300,
-  modalIcon: null,
-  title: null,
-  description: null,
-  cancel: null,
-  confirm: null,
-  onConfirm: null,
 };
 
 export default CommonModal;
