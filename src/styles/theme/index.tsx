@@ -5,7 +5,7 @@ import {
   FONT_WEIGHTS,
   COLORS,
   Z_INDEX_LAYER,
-} from '@constants/Theme';
+} from '@constants/theme';
 
 const theme: DefaultTheme = {
   fontSizes: FONT_SIZES,
