@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Path, UseFormRegister, FieldErrors } from 'react-hook-form';
 
