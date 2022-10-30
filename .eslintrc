@@ -31,6 +31,7 @@
   "plugins": ["import", "react", "@typescript-eslint"],
   "rules": {
     "no-console": "warn",
+    "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": [
       2,
       {
@@ -74,8 +75,7 @@
           "caseInsensitive": true
         },
         "pathGroupsExcludedImportTypes": ["builtin"],
-        "newlines-between": "always",
-        "react/jsx-props-no-spreading": "off"
+        "newlines-between": "always"
       }
     ]
   },
