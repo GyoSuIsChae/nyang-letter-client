@@ -1,19 +1,21 @@
-// @TODO: 소소가 디자인 시스템 정의해 주면 전부 변경 예정
-
 const FONT_SIZES_TYPE = {
+  XXS: 'xxs',
   XS: 'xs',
   SM: 'sm',
   MD: 'md',
   LG: 'lg',
   XL: 'xl',
+  XXL: 'xxl',
 } as const;
 
 const FONT_SIZES = {
-  [FONT_SIZES_TYPE.XS]: 14,
-  [FONT_SIZES_TYPE.SM]: 15,
-  [FONT_SIZES_TYPE.MD]: 16,
-  [FONT_SIZES_TYPE.LG]: 18,
+  [FONT_SIZES_TYPE.XXS]: 14,
+  [FONT_SIZES_TYPE.XS]: 16,
+  [FONT_SIZES_TYPE.SM]: 18,
+  [FONT_SIZES_TYPE.MD]: 20,
+  [FONT_SIZES_TYPE.LG]: 22,
   [FONT_SIZES_TYPE.XL]: 24,
+  [FONT_SIZES_TYPE.XXL]: 26,
 } as const;
 
 const FONT_WEIGHTS_TYPE = {
@@ -29,31 +31,27 @@ const FONT_WEIGHTS = {
 } as const;
 
 const COLORS_TYPE = {
-  BLOWN: 'blown',
-  GRAY_1: 'gray1',
-  GRAY_2: 'gray2',
-  GRAY_3: 'gray3',
-  GRAY_4: 'gray4',
-  GRAY_5: 'gray5',
-  WHITE: 'white',
-  WHITE_GRAY_1: 'white_gray1',
-  WHITE_GRAY_2: 'white_gray2',
-  BLACK: 'black',
-  RED: 'red',
+  GREY_001: 'grey001',
+  GREY_002: 'grey002',
+  GREY_003: 'grey003',
+  GREY_004: 'grey004',
+  GREY_005: 'grey005',
+  WHITE_GREY_001: 'whiteGrey001',
+  WHITE_GREY_002: 'whiteGrey002',
+  BLACK_001: 'black001',
+  RED_001: 'red001',
 };
 
 const COLORS = {
-  [COLORS_TYPE.BLOWN]: '#2D2218',
-  [COLORS_TYPE.GRAY_1]: '#D5D3D1',
-  [COLORS_TYPE.GRAY_2]: '#ABA7A3',
-  [COLORS_TYPE.GRAY_3]: '#817A75',
-  [COLORS_TYPE.GRAY_4]: '#615A52',
-  [COLORS_TYPE.GRAY_5]: '#4C433B',
-  [COLORS_TYPE.WHITE]: '#FFFFFF',
-  [COLORS_TYPE.WHITE_GRAY_1]: '#EEEEEE',
-  [COLORS_TYPE.WHITE_GRAY_2]: '#D1D1D1',
-  [COLORS_TYPE.BLACK]: '#000000',
-  [COLORS_TYPE.RED]: '#FF0000',
+  [COLORS_TYPE.GREY_001]: '#D5D3D1',
+  [COLORS_TYPE.GREY_002]: '#ABA7A3',
+  [COLORS_TYPE.GREY_003]: '#817A75',
+  [COLORS_TYPE.GREY_004]: '#615A52',
+  [COLORS_TYPE.GREY_005]: '#4C433B',
+  [COLORS_TYPE.WHITE_GREY_001]: '#EEEEEE',
+  [COLORS_TYPE.WHITE_GREY_002]: '#D1D1D1',
+  [COLORS_TYPE.BLACK_001]: '#2D2218',
+  [COLORS_TYPE.RED_001]: '#FF0000',
 } as const;
 
 const Z_INDEX_LAYER_TYPE = {
