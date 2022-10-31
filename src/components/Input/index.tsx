@@ -1,24 +1,23 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Path, UseFormRegister, FieldErrors } from 'react-hook-form';
 
 import styled, { css } from 'styled-components';
 
 import { TX, TextCSS } from '@components/Text';
 
-import ErrorMessage from './ErrorMessage';
-
 type TInputProps = {
-  id: Path<any>;
+  id: string;
+  name: string;
+  value: string;
   type?: string;
   width?: number | string;
   placeholder: string;
-  required?: boolean;
-  length: number;
-  minLength?: number;
   maxLength?: number;
-  errors?: FieldErrors;
-  register: UseFormRegister<any>;
+  errors?: any;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
 };
 
 type TStyledInputProps = {
@@ -27,6 +26,7 @@ type TStyledInputProps = {
 
 type TStyledInputLengthTextProps = {
   isWhiteGray: boolean;
+  isRed: boolean;
 };
 
 const DefaultBlock = styled.div`
@@ -43,7 +43,7 @@ const Container = styled(DefaultBlock)`
 const InputBlock = styled(DefaultBlock)`
   gap: 4px;
   padding-bottom: 9px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.white_gray1};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.white_grey001};
 `;
 
 const DefaultInputCSS = css`
@@ -63,63 +63,64 @@ const InputField = styled.input<TStyledInputProps>`
 
     return css`
       width: ${typeof width === 'number' ? `${width}px` : width};
-      color: ${theme.colors.gray4};
-      caret-color: ${theme.colors.gray4};
+      color: ${theme.colors.grey004};
+      caret-color: ${theme.colors.grey004};
 
       &::placeholder {
-        color: ${theme.colors.white_gray2};
+        color: ${theme.colors.white_grey002};
       }
     `;
   }}
 `;
 
 const InputLengthText = styled(TX.Body2)<TStyledInputLengthTextProps>`
-  color: ${({ isWhiteGray, theme }) =>
-    isWhiteGray ? theme.colors.white_gray2 : theme.colors.gray4};
+  ${(props) => {
+    const { isWhiteGray, isRed, theme } = props;
+
+    return css`
+      color: ${isWhiteGray ? theme.colors.white_grey002 : theme.colors.grey004};
+      ${isRed && `color: ${theme.colors.red001}; opacity: 0.35;`}
+    `;
+  }}
 `;
 
 const Input = ({
   id,
-  type,
-  width,
+  name,
+  value,
+  type = 'text',
+  width = '100%',
   placeholder,
-  required,
-  length,
-  minLength,
-  maxLength,
-  errors,
-  register,
+  maxLength = 15,
+  errors = null,
+  onChange = () => {},
+  onBlur = () => {},
 }: TInputProps) => {
+  const { length } = value;
+  const error = errors?.[id];
+
   return (
     <Container>
       <InputBlock>
         <InputField
-          id={id}
+          name={name}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
           type={type}
           width={width}
           placeholder={placeholder}
-          {...register(id, { required, minLength, maxLength })}
         />
 
         {maxLength && (
           <InputLengthText
             isWhiteGray={!length}
+            isRed={error}
           >{`(${length}/${maxLength})`}</InputLengthText>
         )}
       </InputBlock>
-
-      <ErrorMessage id={id} errors={errors} />
     </Container>
   );
-};
-
-Input.defaultProps = {
-  type: 'text',
-  width: '100%',
-  required: true,
-  minLength: null,
-  maxLength: null,
-  errors: null,
 };
 
 export default Input;
