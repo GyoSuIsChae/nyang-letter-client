@@ -1,13 +1,21 @@
-// @TODO: 소소가 디자인 시스템 정의해 주면 전부 변경 예정
-
 const FONT_SIZES_TYPE = {
+  XXS: 'xxs',
   XS: 'xs',
   SM: 'sm',
+  MD: 'md',
+  LG: 'lg',
+  XL: 'xl',
+  XXL: 'xxl',
 } as const;
 
 const FONT_SIZES = {
-  [FONT_SIZES_TYPE.XS]: 14,
-  [FONT_SIZES_TYPE.SM]: 15,
+  [FONT_SIZES_TYPE.XXS]: 14,
+  [FONT_SIZES_TYPE.XS]: 16,
+  [FONT_SIZES_TYPE.SM]: 18,
+  [FONT_SIZES_TYPE.MD]: 20,
+  [FONT_SIZES_TYPE.LG]: 22,
+  [FONT_SIZES_TYPE.XL]: 24,
+  [FONT_SIZES_TYPE.XXL]: 26,
 } as const;
 
 const FONT_WEIGHTS_TYPE = {
@@ -23,13 +31,27 @@ const FONT_WEIGHTS = {
 } as const;
 
 const COLORS_TYPE = {
-  BLACK_100: 'black100',
-  BLACK_200: 'black200',
+  GREY_001: 'grey001',
+  GREY_002: 'grey002',
+  GREY_003: 'grey003',
+  GREY_004: 'grey004',
+  GREY_005: 'grey005',
+  WHITE_GREY_001: 'whiteGrey001',
+  WHITE_GREY_002: 'whiteGrey002',
+  BLACK_001: 'black001',
+  RED_001: 'red001',
 };
 
 const COLORS = {
-  [COLORS_TYPE.BLACK_100]: '#141515',
-  [COLORS_TYPE.BLACK_200]: '#252628',
+  [COLORS_TYPE.GREY_001]: '#D5D3D1',
+  [COLORS_TYPE.GREY_002]: '#ABA7A3',
+  [COLORS_TYPE.GREY_003]: '#817A75',
+  [COLORS_TYPE.GREY_004]: '#615A52',
+  [COLORS_TYPE.GREY_005]: '#4C433B',
+  [COLORS_TYPE.WHITE_GREY_001]: '#EEEEEE',
+  [COLORS_TYPE.WHITE_GREY_002]: '#D1D1D1',
+  [COLORS_TYPE.BLACK_001]: '#2D2218',
+  [COLORS_TYPE.RED_001]: '#FF0000',
 } as const;
 
 const Z_INDEX_LAYER_TYPE = {
