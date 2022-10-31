@@ -1,14 +1,15 @@
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 
 import styled, { css } from 'styled-components';
 
 import Input from '@components/Input';
+import ErrorMessage from '@components/Input/ErrorMessage';
 import { TX, TextCSS } from '@components/Text';
 
-interface IFormInputs {
+interface IFormInput {
   nickname: string;
 }
 
@@ -33,7 +34,7 @@ const BodyText = styled(TX.Body1)`
 const TestButton = styled.button.attrs({
   type: 'submit',
 })`
-  ${TextCSS.Body3}
+  ${TextCSS.BodyText1}
 `;
 
 const NickNameForm = styled.form`
@@ -44,15 +45,12 @@ const NickNameForm = styled.form`
 
 const Home = () => {
   const {
-    register,
-    handleSubmit,
+    control,
     formState: { errors },
-    watch,
-  } = useForm<IFormInputs>();
+    handleSubmit,
+  } = useForm<IFormInput>();
 
-  const nickNameLength = watch('nickname')?.length || 0;
-
-  const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
 
   return (
     <Container>
@@ -63,15 +61,22 @@ const Home = () => {
       </BodyText>
 
       <NickNameForm onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          id="nickname"
-          type="text"
-          placeholder="닉네임을 입력하세요."
-          length={nickNameLength}
-          maxLength={15}
-          errors={errors}
-          register={register}
+        <Controller
+          name="nickname"
+          control={control}
+          rules={{ required: true, maxLength: 15 }}
+          defaultValue=""
+          render={({ field }) => (
+            <Input
+              {...field}
+              id="nickname"
+              errors={errors}
+              placeholder="닉네임을 입력하세요."
+            />
+          )}
         />
+
+        <ErrorMessage id="nickname" errors={errors} />
 
         <TestButton type="submit">저장하기</TestButton>
       </NickNameForm>
