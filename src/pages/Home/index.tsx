@@ -18,7 +18,7 @@ const BodyText = styled(TX.Body1)`
 `;
 
 const TestButton = styled.button`
-  ${TextCSS.Body3}
+  ${TextCSS.Body1}
 `;
 
 const Home = () => {
