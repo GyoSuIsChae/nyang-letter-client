@@ -50,6 +50,7 @@ const Head3 = css`
 const SubTitle1 = css`
   ${DefaultTextCSS}
 
+  font-family: 'NanumSquareRoundOTFB';
   font-size: ${({ theme }) => theme.fontSizes.xs}px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 18.2px;
@@ -58,6 +59,7 @@ const SubTitle1 = css`
 const SubTitle2 = css`
   ${DefaultTextCSS}
 
+  font-family: 'NanumSquareRoundOTFB';
   font-size: ${({ theme }) => theme.fontSizes.xs}px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 18.2px;
@@ -66,6 +68,7 @@ const SubTitle2 = css`
 const Body1 = css`
   ${DefaultTextCSS}
 
+  font-family: 'NanumSquareRoundOTFR';
   font-size: ${({ theme }) => theme.fontSizes.xxs}px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   line-height: 20px;
@@ -74,6 +77,7 @@ const Body1 = css`
 const Body2 = css`
   ${DefaultTextCSS}
 
+  font-family: 'NanumSquareRoundOTFR';
   font-size: ${({ theme }) => theme.fontSizes.xs}px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   line-height: 20px;
