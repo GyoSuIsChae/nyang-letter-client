@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import CommonButton from '@components/CommonButton';
+import CommonButton, { UnderlineButton } from '@components/CommonButton';
 
 const Container = styled.div`
   display: flex;
@@ -48,6 +48,10 @@ const ButtonTestPage = () => {
           wrapperStyle={{ color: 'blue', fontSize: '20px' }}
         />
       </div>
+      <UnderlineButton
+        label="테스트 버튼"
+        onClick={() => console.log('클릭')}
+      />
     </Container>
   );
 };

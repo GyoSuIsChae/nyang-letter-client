@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import imagePrimaryBtn from '@assets/images/primary_btn.png';
 import imageSecondaryBtn from '@assets/images/secondary_btn.png';
 
-interface IProps {
+interface ICommonButtonProps {
   label: string;
   target: 'primary' | 'secondary' | 'default';
   onClick: () => void;
@@ -16,13 +16,27 @@ interface IProps {
   height?: number;
   wrapperStyle?: { [key: string]: string };
 }
+interface IUnderlineButtonProps {
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  inline?: boolean;
+  fullWidth?: boolean;
+  wrapperStyle?: { [key: string]: string };
+}
 
-interface IButtonProps {
+interface ICommonButtonContainerProps {
   disabled?: boolean;
   target: 'primary' | 'secondary' | 'default';
   inline?: boolean;
   fullWidth?: boolean;
   height?: number;
+  wrapperStyle?: { [key: string]: string };
+}
+interface IUnderlineButtonContainerProps {
+  disabled?: boolean;
+  inline?: boolean;
+  fullWidth?: boolean;
   wrapperStyle?: { [key: string]: string };
 }
 
@@ -37,7 +51,7 @@ const getButtonImage = (target: string) => {
   }
 };
 
-const ButtonContainer = styled.button<IButtonProps>`
+const CommonButtonContainer = styled.button<ICommonButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,8 +61,19 @@ const ButtonContainer = styled.button<IButtonProps>`
   background-image: url(${({ target }) => getButtonImage(target)});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  ${({ disabled }) => disabled && 'filter: opacity(0.5);'}
-  ${({ wrapperStyle }) => wrapperStyle || null}
+  ${({ disabled }) => disabled && 'filter: opacity(0.5);'};
+  ${({ wrapperStyle }) => wrapperStyle || null};
+`;
+
+const UnderlineButtonContainer = styled.button<IUnderlineButtonContainerProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(171, 167, 163, 1);
+  ${({ inline }) => inline && 'flex: 1;'};
+  ${({ fullWidth }) => fullWidth && 'width: 100%;'};
+  ${({ disabled }) => disabled && 'filter: opacity(0.5);'};
+  ${({ wrapperStyle }) => wrapperStyle || null};
 `;
 
 const CommonButton = ({
@@ -60,20 +85,42 @@ const CommonButton = ({
   height = 64,
   onClick,
   wrapperStyle = {},
-}: IProps) => {
+}: ICommonButtonProps) => {
   return (
-    <ButtonContainer
+    <CommonButtonContainer
       disabled={disabled}
-      onClick={() => onClick()}
       inline={inline}
       fullWidth={fullWidth}
       height={height}
       target={target}
       wrapperStyle={wrapperStyle}
+      onClick={() => onClick()}
     >
       {/* TODO: Typography 컴포넌트 적용하기 */}
       <span>{label}</span>
-    </ButtonContainer>
+    </CommonButtonContainer>
+  );
+};
+
+export const UnderlineButton = ({
+  label,
+  disabled = false,
+  inline = false,
+  fullWidth = false,
+  onClick,
+  wrapperStyle = {},
+}: IUnderlineButtonProps) => {
+  return (
+    <UnderlineButtonContainer
+      disabled={disabled}
+      inline={inline}
+      fullWidth={fullWidth}
+      wrapperStyle={wrapperStyle}
+      onClick={() => onClick()}
+    >
+      {/* TODO: Typography 컴포넌트 적용하기 */}
+      <span style={{ color: 'rgba(171, 167, 163, 1)' }}>{label}</span>
+    </UnderlineButtonContainer>
   );
 };
 
