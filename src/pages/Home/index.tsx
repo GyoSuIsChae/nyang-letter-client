@@ -73,7 +73,7 @@ const Home = () => {
           register={register}
         />
 
-        <TestButton type="submit">저장하기</TestButton>
+        <TestButton>저장하기</TestButton>
       </NickNameForm>
     </Container>
   );
