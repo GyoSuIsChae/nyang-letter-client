@@ -1,0 +1,19 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+import NanumSquareRoundOTFB from '@assets/fonts/NanumSquareRoundOTFB.otf';
+import NanumSquareRoundOTFR from '@assets/fonts/NanumSquareRoundOTFR.otf';
+
+export default `
+  @font-face {
+    font-family: 'NanumSquareRoundOTFR';
+    font-weight: 400;
+    font-style: normal;
+    src: url(${NanumSquareRoundOTFR}) format('otf');
+  }
+
+  @font-face {
+    font-family: 'NanumSquareRoundOTFB';
+    font-weight: 700;
+    font-style: normal;
+    src: url(${NanumSquareRoundOTFB}) format('otf');
+  }
+`;
