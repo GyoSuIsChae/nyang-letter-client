@@ -36,8 +36,8 @@ const COLORS_TYPE = {
   GREY_003: 'grey003',
   GREY_004: 'grey004',
   GREY_005: 'grey005',
-  WHITE_GREY_001: 'whiteGrey001',
-  WHITE_GREY_002: 'whiteGrey002',
+  WHITE_GREY_001: 'white_grey001',
+  WHITE_GREY_002: 'white_grey002',
   BLACK_001: 'black001',
   RED_001: 'red001',
 };
