@@ -26,7 +26,7 @@ const Container = styled.div`
   gap: 2em;
 `;
 
-const BodyText = styled(TX.Body1)`
+const BodyText = styled(TX.SubTitle1)`
   text-align: center;
 `;
 
@@ -56,11 +56,7 @@ const Home = () => {
 
   return (
     <Container>
-      <BodyText>
-        냥레터에서 사용할
-        <br />
-        닉네임을 입력해 주세요!
-      </BodyText>
+      <BodyText>당신의 소중한 날에 냥레터가 함께 해요</BodyText>
 
       <NickNameForm onSubmit={handleSubmit(onSubmit)}>
         <Input
