@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 
 import styled, { css } from 'styled-components';
 
+import CommonDatePicker from '@components/CommonDatePicker';
 import Input from '@components/Input';
 import { TX, TextCSS } from '@components/Text';
 
@@ -75,6 +76,10 @@ const Home = () => {
 
         <TestButton>저장하기</TestButton>
       </NickNameForm>
+      <div style={{ width: '100%', paddingInline: 20 }}>
+        <div>달력 클릭</div>
+        <CommonDatePicker />
+      </div>
     </Container>
   );
 };
