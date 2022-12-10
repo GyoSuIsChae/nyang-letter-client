@@ -86,6 +86,7 @@ const Body2 = css`
 const BodyText1 = css`
   ${DefaultTextCSS}
 
+  font-family: 'NotoSansKR-Regular';
   font-size: ${({ theme }) => theme.fontSizes.xs}px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   line-height: 26px;
