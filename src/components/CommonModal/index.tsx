@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import styled from 'styled-components';
 
-// import modalTest from '@assets/images/modal_test.png';
-// import modalTest2 from '@assets/images/modal_test2.png';
+import modalBigBg from '@assets/images/modal_bg_big.png';
+import modalSmallBg from '@assets/images/modal_bg_small.png';
 import Portal from '@components/Portal';
 
 const transitionName = `Modal`;
@@ -61,22 +62,22 @@ const Container = styled.div`
 `;
 
 interface ModalProps {
-  test?: boolean;
+  button?: boolean;
 }
 
-/*
-  // background-image: url(${(props) => (props.test ? modalTest : modalTest2)});
-  //background-position: center;
-  //background-size: cover;
-  //background-repeat: no-repeat;
- */
-
 const ModalWrapper = styled.div<ModalProps>`
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  background: #fff;
+  //border-radius: 8px;
+  //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  //background: #fff;
 
-  max-height: calc(100vh - 16px);
+  background-image: url(${({ button }) =>
+    button ? modalBigBg : modalSmallBg});
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  //height: 118px;
+  //max-height: calc(100vh - 16px);
+
   overflow: hidden auto;
   position: relative;
   padding-block: 16px;
@@ -153,7 +154,7 @@ const CommonModal = ({
           <Dim onClick={onClose} />
           <Container>
             {children || (
-              <ModalWrapper test={!!(cancel || confirm)}>
+              <ModalWrapper button={!!(cancel || confirm)}>
                 <ModalHeader>
                   <div style={{ width: 24, height: 24 }} />
                   {modalIcon && modalIcon}
