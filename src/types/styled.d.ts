@@ -1,7 +1,6 @@
 import { CSSProp } from 'styled-components';
 
 import {
-  FONT_SIZES_TYPE,
   FONT_WEIGHTS_TYPE,
   COLORS_TYPE,
   Z_INDEX_LAYER_TYPE,
@@ -15,10 +14,6 @@ declare module 'styled-components' {
   }
 
   export interface DefaultTheme {
-    fontSizes: {
-      [key in FONT_SIZES_TYPE]: number;
-    };
-
     fontWeights: {
       [key in FONT_WEIGHTS_TYPE]: number;
     };
