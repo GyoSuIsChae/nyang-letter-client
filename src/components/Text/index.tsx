@@ -19,7 +19,7 @@ const Head3 = styled.span`
 `;
 
 const Head4 = styled.span`
-  ${TextCSS.Head3}
+  ${TextCSS.Head4}
 `;
 
 const SubHead1 = styled.span`
