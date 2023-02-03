@@ -19,11 +19,10 @@ const FlexRowCenterDiv = styled.div`
 const HeaderContainer = styled(FlexRowCenterDiv)`
   position: relative;
   width: 100%;
+  height: 48px;
 
   padding-bottom: 20px;
 `;
-
-const TitleText = styled(TX.Head4)``;
 
 const BackButton = styled.img.attrs({
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -49,7 +48,7 @@ const Header: React.FC<IHeaderProps> = ({ title }) => {
   return (
     <HeaderContainer>
       <BackButton onClick={onBackButtonClick} />
-      <TitleText>{title}</TitleText>
+      <TX.Head4>{title}</TX.Head4>
     </HeaderContainer>
   );
 };
