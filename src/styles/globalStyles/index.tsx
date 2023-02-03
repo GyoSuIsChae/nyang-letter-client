@@ -21,9 +21,9 @@ const GlobalStyles = createGlobalStyle`
   #root {
     height: 100%;
     min-height: 100%;
-    cursor: default;
-    margin: 0;
+    margin: 0px auto;
     padding: 0;
+    cursor: default;
     
     &::-webkit-scrollbar {
       display: none;

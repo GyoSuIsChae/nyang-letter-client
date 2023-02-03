@@ -4,6 +4,7 @@ import { Path, UseFormRegister, FieldErrors } from 'react-hook-form';
 
 import styled, { css } from 'styled-components';
 
+import ClearButtonImage from '@assets/images/btn_clear.png';
 import { TX, TextCSS } from '@components/Text';
 
 import ErrorMessage from './ErrorMessage';
@@ -18,6 +19,7 @@ type TInputProps = {
   minLength?: number;
   maxLength?: number;
   errors?: FieldErrors;
+  handleClearButtonClick?: () => void;
   register: UseFormRegister<any>;
 };
 
@@ -39,9 +41,12 @@ const Container = styled(DefaultBlock)`
   flex: 1;
   flex-direction: column;
   gap: 8px;
+
+  width: 100%;
 `;
 
 const InputBlock = styled(DefaultBlock)`
+  align-items: center;
   gap: 4px;
   padding-bottom: 9px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.white_grey001};
@@ -64,6 +69,7 @@ const InputField = styled.input<TStyledInputProps>`
 
     return css`
       width: ${typeof width === 'number' ? `${width}px` : width};
+      width: 100%;
       color: ${theme.colors.gray004};
       caret-color: ${theme.colors.gray004};
 
@@ -85,6 +91,17 @@ const InputLengthText = styled(TX.Body1)<TStyledInputLengthTextProps>`
   }}
 `;
 
+const ClearButtonIcon = styled.img.attrs({
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  src: ClearButtonImage,
+  alt: '지우기',
+})`
+  width: 22px;
+  height: 22px;
+
+  cursor: pointer;
+`;
+
 const Input = ({
   id,
   type = 'text',
@@ -95,6 +112,7 @@ const Input = ({
   minLength = 1,
   maxLength = 15,
   errors = {},
+  handleClearButtonClick = () => {},
   register,
 }: TInputProps) => {
   const isRed = !!(length && errors[id]);
@@ -116,6 +134,8 @@ const Input = ({
             isRed={isRed}
           >{`(${length}/${maxLength})`}</InputLengthText>
         )}
+
+        {length ? <ClearButtonIcon onClick={handleClearButtonClick} /> : null}
       </InputBlock>
 
       <ErrorMessage errors={errors[id]} />

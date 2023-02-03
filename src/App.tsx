@@ -2,10 +2,10 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { PATH_NAMES } from '@constants/pages';
+import OnBoarding from '@pages/Auth/OnBoarding';
 import ButtonTestPage from '@pages/ButtonTestPage';
-import HomePage from '@pages/Home';
+import Home from '@pages/Home';
 import ModalTestPage from '@pages/ModalTestPage';
-import OnBoarding from '@pages/OnBoarding';
 
 const App: React.FC = () => {
   const accessToken = false;
@@ -16,7 +16,7 @@ const App: React.FC = () => {
         path={PATH_NAMES.HOME}
         element={
           accessToken ? (
-            <HomePage />
+            <Home />
           ) : (
             <Navigate to={PATH_NAMES.ON_BOARDING} replace />
           )
