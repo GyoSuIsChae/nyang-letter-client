@@ -26,7 +26,7 @@ const Container = styled.div`
   gap: 2em;
 `;
 
-const BodyText = styled(TX.SubTitle1)`
+const BodyText = styled(TX.SubHead1)`
   text-align: center;
 `;
 
@@ -42,7 +42,7 @@ const NickNameForm = styled.form`
   gap: 0.5rem;
 `;
 
-const Home = () => {
+const Home: React.FC = () => {
   const {
     register,
     handleSubmit,
