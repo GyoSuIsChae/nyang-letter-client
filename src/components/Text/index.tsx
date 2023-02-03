@@ -18,12 +18,20 @@ const Head3 = styled.span`
   ${TextCSS.Head3}
 `;
 
-const SubTitle1 = styled.span`
-  ${TextCSS.SubTitle1}
+const Head4 = styled.span`
+  ${TextCSS.Head3}
 `;
 
-const SubTitle2 = styled.span`
-  ${TextCSS.SubTitle2}
+const SubHead1 = styled.span`
+  ${TextCSS.SubHead1}
+`;
+
+const SubHead2 = styled.span`
+  ${TextCSS.SubHead2}
+`;
+
+const SubHead3 = styled.span`
+  ${TextCSS.SubHead3}
 `;
 
 const Body1 = styled.span`
@@ -38,16 +46,23 @@ const BodyText1 = styled.span`
   ${TextCSS.BodyText1}
 `;
 
+const LetterText1 = styled.span`
+  ${TextCSS.LetterText1}
+`;
+
 const TX = {
   Display1,
   Head1,
   Head2,
   Head3,
-  SubTitle1,
-  SubTitle2,
+  Head4,
+  SubHead1,
+  SubHead2,
+  SubHead3,
   Body1,
   Body2,
   BodyText1,
+  LetterText1,
 };
 
 export { TX, TextCSS };
