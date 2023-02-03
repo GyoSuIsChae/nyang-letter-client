@@ -6,6 +6,7 @@ const FONT_SIZES_TYPE = {
   LG: 'lg',
   XL: 'xl',
   XXL: 'xxl',
+  XXXL: 'xxxl',
 } as const;
 
 const FONT_SIZES = {
@@ -16,6 +17,7 @@ const FONT_SIZES = {
   [FONT_SIZES_TYPE.LG]: 22,
   [FONT_SIZES_TYPE.XL]: 24,
   [FONT_SIZES_TYPE.XXL]: 26,
+  [FONT_SIZES_TYPE.XXXL]: 28,
 } as const;
 
 const FONT_WEIGHTS_TYPE = {
