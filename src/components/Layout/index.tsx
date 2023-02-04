@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import styled from 'styled-components';
-
-interface ILayoutProps {
-  children?: React.ReactNode;
-}
 
 const MOBILE_WIDTH = 375;
 const MAX_WIDTH = 768;
@@ -39,7 +35,7 @@ const Wrapper = styled.div`
   overflow-x: hidden;
 `;
 
-const Layout: React.FC<ILayoutProps> = ({ children = null }) => (
+const Layout = ({ children }: PropsWithChildren) => (
   <Container>
     <Wrapper>{children || <Outlet />}</Wrapper>
   </Container>
