@@ -21,7 +21,7 @@ const CloseButtonIcon = styled.img.attrs({
   cursor: pointer;
 `;
 
-const CloseButton = ({ style = {}, onClick = () => {} }: ICloseButton) => {
+const CloseButton = ({ style = {}, onClick = undefined }: ICloseButton) => {
   const navigate = useNavigate();
 
   const onCloseButtonClick = () => {
