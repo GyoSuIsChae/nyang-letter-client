@@ -9,9 +9,13 @@ import { PATH_NAMES } from '@constants/pages';
 
 const FlexColumnCenterDiv = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+`;
+
+const Container = styled(FlexColumnCenterDiv)`
+  height: 100vh;
 `;
 
 const TopWrapper = styled(FlexColumnCenterDiv)`
@@ -68,17 +72,17 @@ const HeadText = styled(TX.Head3)`
 const OnBoarding: React.FC = () => {
   const navigate = useNavigate();
 
-  const onAuthClick = () => navigate(PATH_NAMES.HOME);
+  const onAuthClick = () => navigate(PATH_NAMES.SIGN_UP);
 
   return (
-    <FlexColumnCenterDiv>
+    <Container>
       <TopWrapper>
         <Logo>
           <TX.SubHead1>로고</TX.SubHead1>
         </Logo>
 
         <CommonButton
-          target="primary"
+          target="help"
           label="냥레터가 뭔가요?"
           height={42}
           onClick={() => {}}
@@ -102,7 +106,7 @@ const OnBoarding: React.FC = () => {
         <BodyText>만든이들</BodyText>
         <HeadText>Team. 채교수수</HeadText>
       </BottomWrapper>
-    </FlexColumnCenterDiv>
+    </Container>
   );
 };
 
