@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import CircleImage from '@components/CircleImage';
 import CloseButton from '@components/CloseButton';
 import CommonButton, { UnderlineButton } from '@components/CommonButton';
-import CommonModal from '@components/Modal';
+import Modal from '@components/Modal';
 import { TX, TextCSS } from '@components/Text';
 
 const FlexColumnCenterDiv = styled.div`
@@ -81,7 +81,7 @@ const DeleteAccountModal = () => {
     <>
       <DeleteAccountButton onClick={handleOpen}>회원 탈퇴</DeleteAccountButton>
 
-      <CommonModal
+      <Modal
         selector="#modal-root"
         isOpen={isOpen}
         size="big"
@@ -118,7 +118,7 @@ const DeleteAccountModal = () => {
             </ModalBottom>
           </ModalContentContainer>
         </ModalInner>
-      </CommonModal>
+      </Modal>
     </>
   );
 };
