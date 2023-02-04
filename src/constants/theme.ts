@@ -1,23 +1,3 @@
-const FONT_SIZES_TYPE = {
-  XXS: 'xxs',
-  XS: 'xs',
-  SM: 'sm',
-  MD: 'md',
-  LG: 'lg',
-  XL: 'xl',
-  XXL: 'xxl',
-} as const;
-
-const FONT_SIZES = {
-  [FONT_SIZES_TYPE.XXS]: 14,
-  [FONT_SIZES_TYPE.XS]: 16,
-  [FONT_SIZES_TYPE.SM]: 18,
-  [FONT_SIZES_TYPE.MD]: 20,
-  [FONT_SIZES_TYPE.LG]: 22,
-  [FONT_SIZES_TYPE.XL]: 24,
-  [FONT_SIZES_TYPE.XXL]: 26,
-} as const;
-
 const FONT_WEIGHTS_TYPE = {
   REGULAR: 'regular',
   MEDIUM: 'medium',
@@ -81,8 +61,6 @@ const Z_INDEX_LAYER = {
 } as const;
 
 export {
-  FONT_SIZES_TYPE,
-  FONT_SIZES,
   FONT_WEIGHTS_TYPE,
   FONT_WEIGHTS,
   COLORS_TYPE,
