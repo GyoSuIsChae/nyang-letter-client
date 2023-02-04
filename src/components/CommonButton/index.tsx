@@ -82,13 +82,14 @@ const CommonButtonContainer = styled.button<ICommonButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+
   height: ${({ height }) => height || 64}px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-image: url(${({ target, disabled }) =>
     getButtonImage(target, disabled)});
-
   aspect-ratio: ${({ target }) => getAspectRatio(target)};
+
   pointer: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 
   ${({ fullWidth }) => fullWidth && 'width: 100%;'}
@@ -100,7 +101,9 @@ const UnderlineButtonContainer = styled.button<IUnderlineButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(171, 167, 163, 1);
+
+  padding-bottom: 2px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey002};
   ${({ inline }) => inline && 'flex: 1;'};
   ${({ fullWidth }) => fullWidth && 'width: 100%;'};
   ${({ disabled }) => disabled && 'filter: opacity(0.5);'};
