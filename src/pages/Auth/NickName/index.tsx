@@ -97,7 +97,7 @@ const NickName: React.FC = () => {
         <CommonButton
           fullWidth
           disabled={isConfirmButtonDisabled}
-          height={64}
+          height={56}
           target="primary"
           label="확인"
           onClick={handleSubmit(onSubmit)}
