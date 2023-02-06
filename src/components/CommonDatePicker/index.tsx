@@ -51,12 +51,13 @@ const StyledButton = styled.button<{
   border-radius: 6px;
 `;
 
-const SubtitleText = styled(TX.SubTitle1)`
+const SubtitleText = styled(TX.SubHead1)`
   font-size: 0.9rem;
 `;
 
-const BodyText = styled(TX.Body1)`
+const SelectedText = styled(TX.Body1)`
   text-align: center;
+  color: #767676;
 `;
 
 const CalenderInput = styled.button`
@@ -64,9 +65,9 @@ const CalenderInput = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #000;
-  border-radius: 8px;
-  padding-block: 6px;
+  border: 1px solid ${COLORS.white_grey001};
+  border-radius: 11px;
+  padding-block: 13px;
   padding-inline: 12px;
 `;
 const CalendarIcon = styled.img.attrs({
@@ -120,6 +121,13 @@ const StyledArrowButton = styled.button`
 `;
 
 const StyledDatePickerContainer = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: white;
+  margin-inline: 16px;
+
   border: 1px solid #fff;
   border-radius: 6px;
   margin-block: 8px;
@@ -147,7 +155,7 @@ const CustomInput = ({
   <CalenderInput onClick={onClick}>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <CalendarIcon style={{ marginRight: 8 }} />
-      <BodyText>{format(value, 'yyyy.MM.dd')}</BodyText>
+      <SelectedText>{format(value, 'yyyy.MM.dd')}</SelectedText>
     </div>
     <ArrowUpIcon isOpen={isOpen} style={{ marginLeft: 8 }} />
   </CalenderInput>
@@ -204,9 +212,14 @@ const CustomCalendar = ({
   </>
 );
 
-const CommonDatePicker = () => {
+const CommonDatePicker = ({
+  currentDate,
+  setCurrentDate,
+}: {
+  currentDate: Date | string;
+  setCurrentDate: (date: Date | string) => void;
+}) => {
   const initialDate = new Date();
-  const [startDate, setStartDate] = useState<Date>(initialDate);
   const [isCalendarOpen, setIsCalendarOpen] = useState<boolean>(false);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -216,7 +229,7 @@ const CommonDatePicker = () => {
 
   const onClickToCancel = () => {
     setIsCalendarOpen(false);
-    setStartDate(initialDate);
+    setCurrentDate(initialDate);
   };
   const onClickToConfirm = () => {
     setIsCalendarOpen(false);
@@ -236,7 +249,7 @@ const CommonDatePicker = () => {
   return (
     <>
       <CustomInput
-        value={startDate}
+        value={new Date(currentDate)}
         onClick={handleClick}
         isOpen={isCalendarOpen}
       />
@@ -247,9 +260,9 @@ const CommonDatePicker = () => {
             className="customDatePickerWidth"
             dateFormat="yyyy.MM.dd"
             locale="ko"
-            selected={startDate}
+            selected={new Date(currentDate)}
             disabledKeyboardNavigation
-            onChange={(date: Date) => setStartDate(date)}
+            onChange={(date: Date) => setCurrentDate(date)}
             calendarContainer={renderCalendarContainer}
             renderCustomHeader={(data) => <CustomHeader data={data} />}
             inline
