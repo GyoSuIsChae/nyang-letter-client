@@ -29,6 +29,9 @@ interface CalenderProps {
     nextMonthButtonDisabled: boolean;
   };
 }
+interface ButtonProps {
+  confirm?: boolean;
+}
 
 const CalendarFooter = styled.div`
   width: 100%;
@@ -40,9 +43,7 @@ const CalendarFooter = styled.div`
   padding: 12px;
 `;
 
-const StyledButton = styled.button<{
-  confirm?: boolean;
-}>`
+const StyledButton = styled.button<ButtonProps>`
   background-color: ${({ confirm }) =>
     confirm ? theme.colors.black001 : theme.colors.white_grey001};
   color: ${({ confirm }) =>
@@ -50,6 +51,11 @@ const StyledButton = styled.button<{
   padding-block: 12px;
   width: 100%;
   border-radius: 6px;
+`;
+
+const ButtonText = styled(TX.Body1)<ButtonProps>`
+  color: ${({ confirm }) =>
+    confirm ? theme.colors.white_grey001 : theme.colors.black001};
 `;
 
 const SubtitleText = styled(TX.SubHead1)`
@@ -204,10 +210,10 @@ const CustomCalendar = ({
     {children}
     <CalendarFooter>
       <StyledButton type="button" onClick={cancelButton}>
-        취소
+        <ButtonText>취소</ButtonText>
       </StyledButton>
       <StyledButton type="button" confirm onClick={confirmButton}>
-        확인
+        <ButtonText confirm>확인</ButtonText>
       </StyledButton>
     </CalendarFooter>
   </>

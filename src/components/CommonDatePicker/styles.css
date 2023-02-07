@@ -45,11 +45,13 @@
 
 .react-datepicker__day-name {
     color: #817A75;
+    font-family: 'NanumSquareRoundOTFB';
 }
 
 
 .react-datepicker__day {
     color: #000;
+    font-family: 'NanumSquareRoundOTFB';
 }
 
 .react-datepicker__day--disabled, .react-datepicker__day--outside-month {
