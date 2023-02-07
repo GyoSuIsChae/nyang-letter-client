@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Header from '@components/Header';
 import { TX } from '@components/Text';
 import { MOCK_CAFE_LIST } from '@constants/mockData';
-import { COLORS } from '@constants/theme';
+import theme from '@styles/theme';
 
 const CafeListContainer = styled.div`
   flex: 1;
@@ -44,12 +44,12 @@ const ItemImageWrapper = styled.div`
 const ItemOpenStatus = styled.div<{ openStatus: number }>`
   background-color: ${({ openStatus }) => {
     if (openStatus === 1) {
-      return COLORS.black001;
+      return theme.colors.black001;
     }
     if (openStatus === 2) {
-      return COLORS.grey003;
+      return theme.colors.grey003;
     }
-    return COLORS.white_grey001;
+    return theme.colors.white_grey001;
   }};
   border-radius: 12px;
   padding-inline: 14px;
@@ -68,7 +68,7 @@ const TitleWrapper = styled.div`
 `;
 
 const TitleText = styled(TX.SubHead2)`
-  color: ${COLORS.black001};
+  color: ${theme.colors.black001};
 `;
 
 const InnerText = styled(TX.Body1)<{ openStatus?: number }>`
@@ -77,9 +77,9 @@ const InnerText = styled(TX.Body1)<{ openStatus?: number }>`
       return 'white';
     }
     if (openStatus === 0) {
-      return COLORS.grey002;
+      return theme.colors.grey002;
     }
-    return COLORS.grey002;
+    return theme.colors.grey002;
   }};
 `;
 
