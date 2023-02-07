@@ -13,8 +13,8 @@ import arrowDoubleUpIco from '@assets/images/arrow-double-up.png';
 import arrowUpIco from '@assets/images/arrow-up-outline.png';
 import calendarIco from '@assets/images/calendar-outline.png';
 import { TX } from '@components/Text';
-import { COLORS } from '@constants/theme';
 import './styles.css';
+import theme from '@styles/theme';
 
 registerLocale('ko', ko);
 
@@ -29,6 +29,9 @@ interface CalenderProps {
     nextMonthButtonDisabled: boolean;
   };
 }
+interface ButtonProps {
+  confirm?: boolean;
+}
 
 const CalendarFooter = styled.div`
   width: 100%;
@@ -40,15 +43,19 @@ const CalendarFooter = styled.div`
   padding: 12px;
 `;
 
-const StyledButton = styled.button<{
-  confirm?: boolean;
-}>`
+const StyledButton = styled.button<ButtonProps>`
   background-color: ${({ confirm }) =>
-    confirm ? COLORS.black001 : COLORS.white_grey001};
-  color: ${({ confirm }) => (confirm ? COLORS.white_grey001 : COLORS.black001)};
+    confirm ? theme.colors.black001 : theme.colors.white_grey001};
+  color: ${({ confirm }) =>
+    confirm ? theme.colors.white_grey001 : theme.colors.black001};
   padding-block: 12px;
   width: 100%;
   border-radius: 6px;
+`;
+
+const ButtonText = styled(TX.Body1)<ButtonProps>`
+  color: ${({ confirm }) =>
+    confirm ? theme.colors.white_grey001 : theme.colors.black001};
 `;
 
 const SubtitleText = styled(TX.SubHead1)`
@@ -65,7 +72,7 @@ const CalenderInput = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid ${COLORS.white_grey001};
+  border: 1px solid ${theme.colors.white_grey001};
   border-radius: 11px;
   padding-block: 13px;
   padding-inline: 12px;
@@ -116,7 +123,7 @@ const StyledArrowButton = styled.button`
   justify-content: center;
   align-items: center;
   padding: 0.35rem;
-  border: 1px solid ${COLORS.grey001};
+  border: 1px solid ${theme.colors.grey001};
   border-radius: 0.4rem;
 `;
 
@@ -203,10 +210,10 @@ const CustomCalendar = ({
     {children}
     <CalendarFooter>
       <StyledButton type="button" onClick={cancelButton}>
-        취소
+        <ButtonText>취소</ButtonText>
       </StyledButton>
       <StyledButton type="button" confirm onClick={confirmButton}>
-        확인
+        <ButtonText confirm>확인</ButtonText>
       </StyledButton>
     </CalendarFooter>
   </>

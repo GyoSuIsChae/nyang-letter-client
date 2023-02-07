@@ -2,11 +2,15 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const CS = styled.div<{ height?: number }>`
+interface Props {
+  height?: number;
+}
+
+const CS = styled.div<Props>`
   height: ${({ height = 30 }) => height}px;
 `;
 
-const CommonSpace = ({ height = 30 }: { height?: number }) => {
+const CommonSpace = ({ height = 30 }: Props) => {
   return <CS height={height} />;
 };
 

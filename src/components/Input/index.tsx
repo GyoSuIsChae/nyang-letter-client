@@ -59,8 +59,8 @@ const DefaultInputCSS = css`
 `;
 
 const InputField = styled.input<TStyledInputProps>`
-  ${DefaultInputCSS}
-  ${TextCSS.Body2}
+  ${DefaultInputCSS};
+  ${TextCSS.Body2};
 
   flex: 1;
 
