@@ -26,14 +26,14 @@ const Container = styled.div`
   gap: 2em;
 `;
 
-const BodyText = styled(TX.SubHead1)`
+const BodyText = styled(TX.Head1)`
   text-align: center;
 `;
 
 const TestButton = styled.button.attrs({
   type: 'submit',
 })`
-  ${TextCSS.BodyText1}
+  ${TextCSS.BodyText1};
 `;
 
 const NickNameForm = styled.form`
