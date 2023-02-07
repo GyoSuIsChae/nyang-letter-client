@@ -8,6 +8,7 @@ import CloseButtonImage from '@assets/images/btn_close.png';
 
 interface ICloseButton {
   style: React.CSSProperties;
+  onClick?: () => void;
 }
 
 const CloseButtonIcon = styled.img.attrs({
@@ -20,10 +21,18 @@ const CloseButtonIcon = styled.img.attrs({
   cursor: pointer;
 `;
 
-const CloseButton = ({ style = {} }: ICloseButton) => {
+const CloseButton = ({ style = {}, onClick = undefined }: ICloseButton) => {
   const navigate = useNavigate();
 
-  const onCloseButtonClick = () => navigate(-1);
+  const onCloseButtonClick = () => {
+    if (onClick) {
+      onClick();
+
+      return;
+    }
+
+    navigate(-1);
+  };
 
   return <CloseButtonIcon onClick={onCloseButtonClick} style={style} />;
 };
