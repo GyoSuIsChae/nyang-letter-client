@@ -14,77 +14,117 @@ const DefaultTextCSS = css<TextProps>`
 `;
 
 const Display1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xxl}px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 34px;
+  font-family: 'LeeSeoyun';
+  font-size: 1.75rem;
+  line-height: 125%;
+  letter-spacing: -0.01em;
 `;
 
 const Head1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.md}px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 26px;
-  letter-spacing: -1%;
+  font-family: 'LeeSeoyun';
+  font-size: 1.375rem;
+  line-height: 130%;
+  letter-spacing: -0.02em;
 `;
 
 const Head2 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.lg}px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 26px;
+  font-family: 'LeeSeoyun';
+  font-size: 1.375rem;
+  line-height: 130%;
+  letter-spacing: -0.02em;
 `;
 
 const Head3 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xl}px;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 30px;
-  letter-spacing: -2%;
+  font-family: 'LeeSeoyun';
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -0.02em;
 `;
 
-const SubTitle1 = css`
-  ${DefaultTextCSS}
+const Head4 = css`
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xs}px;
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  line-height: 18.2px;
+  font-family: 'LeeSeoyun';
+  font-size: 1.625rem;
+  line-height: 125%;
+  letter-spacing: -0.01em;
 `;
 
-const SubTitle2 = css`
-  ${DefaultTextCSS}
+const SubHead1 = css`
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xs}px;
+  font-family: 'NanumSquareRoundOTFB';
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  line-height: 18.2px;
+  font-size: 0.875rem;
+  line-height: 145%;
+  letter-spacing: -0.02em;
+`;
+
+const SubHead2 = css`
+  ${DefaultTextCSS};
+
+  font-family: 'NanumSquareRoundOTFB';
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: 1rem;
+  line-height: -0.02em;
+`;
+
+const SubHead3 = css`
+  ${DefaultTextCSS};
+
+  font-family: 'NanumSquareRoundOTFB';
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: 1.125rem;
+  line-height: 145%;
+  letter-spacing: -0.02em;
 `;
 
 const Body1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xxs}px;
+  font-family: 'NanumSquareRoundOTFR';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-size: 0.875rem;
   line-height: 20px;
+  letter-spacing: -0.02em;
 `;
 
 const Body2 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xs}px;
+  font-family: 'NanumSquareRoundOTFR';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-size: 1rem;
   line-height: 20px;
+  letter-spacing: -0.02em;
 `;
 
 const BodyText1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
-  font-size: ${({ theme }) => theme.fontSizes.xs}px;
+  font-family: 'NotoSansKR-Regular';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
-  line-height: 26px;
+  font-size: 1rem;
+  line-height: 165%;
+  letter-spacing: -0.02em;
+`;
+
+const LetterText1 = css`
+  ${DefaultTextCSS};
+
+  font-family: 'NotoSansKR-Regular';
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-size: 1rem;
+  line-height: 200%;
+  letter-spacing: -0.02em;
 `;
 
 const TextCSS = {
@@ -92,11 +132,14 @@ const TextCSS = {
   Head1,
   Head2,
   Head3,
-  SubTitle1,
-  SubTitle2,
+  Head4,
+  SubHead1,
+  SubHead2,
+  SubHead3,
   Body1,
   Body2,
   BodyText1,
+  LetterText1,
 };
 
 export default TextCSS;

@@ -11,7 +11,7 @@ interface IErrorMessageProps {
 }
 
 const ErrorBlock = styled.div`
-  ${TextCSS.Body1}
+  ${TextCSS.Body1};
 
   width: 100%;
   display: flex;
