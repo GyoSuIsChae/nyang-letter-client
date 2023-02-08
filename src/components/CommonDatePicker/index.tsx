@@ -14,7 +14,6 @@ import arrowUpIco from '@assets/images/arrow-up-outline.png';
 import calendarIco from '@assets/images/calendar-outline.png';
 import { TX } from '@components/Text';
 import './styles.css';
-import theme from '@styles/theme';
 
 registerLocale('ko', ko);
 
@@ -44,9 +43,9 @@ const CalendarFooter = styled.div`
 `;
 
 const StyledButton = styled.button<ButtonProps>`
-  background-color: ${({ confirm }) =>
+  background-color: ${({ confirm, theme }) =>
     confirm ? theme.colors.black001 : theme.colors.white_grey001};
-  color: ${({ confirm }) =>
+  color: ${({ confirm, theme }) =>
     confirm ? theme.colors.white_grey001 : theme.colors.black001};
   padding-block: 12px;
   width: 100%;
@@ -54,7 +53,7 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 const ButtonText = styled(TX.Body1)<ButtonProps>`
-  color: ${({ confirm }) =>
+  color: ${({ confirm, theme }) =>
     confirm ? theme.colors.white_grey001 : theme.colors.black001};
 `;
 
@@ -72,7 +71,7 @@ const CalenderInput = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid ${theme.colors.white_grey001};
+  border: 1px solid ${({ theme }) => theme.colors.white_grey001};
   border-radius: 11px;
   padding-block: 13px;
   padding-inline: 12px;
@@ -123,7 +122,7 @@ const StyledArrowButton = styled.button`
   justify-content: center;
   align-items: center;
   padding: 0.35rem;
-  border: 1px solid ${theme.colors.grey001};
+  border: 1px solid ${({ theme }) => theme.colors.grey001};
   border-radius: 0.4rem;
 `;
 
