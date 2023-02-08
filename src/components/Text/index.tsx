@@ -3,51 +3,51 @@ import styled from 'styled-components';
 import TextCSS from './Styles';
 
 const Display1 = styled.span`
-  ${TextCSS.Display1}
+  ${TextCSS.Display1};
 `;
 
 const Head1 = styled.span`
-  ${TextCSS.Head1}
+  ${TextCSS.Head1};
 `;
 
 const Head2 = styled.span`
-  ${TextCSS.Head2}
+  ${TextCSS.Head2};
 `;
 
 const Head3 = styled.span`
-  ${TextCSS.Head3}
+  ${TextCSS.Head3};
 `;
 
 const Head4 = styled.span`
-  ${TextCSS.Head4}
+  ${TextCSS.Head4};
 `;
 
 const SubHead1 = styled.span`
-  ${TextCSS.SubHead1}
+  ${TextCSS.SubHead1};
 `;
 
 const SubHead2 = styled.span`
-  ${TextCSS.SubHead2}
+  ${TextCSS.SubHead2};
 `;
 
 const SubHead3 = styled.span`
-  ${TextCSS.SubHead3}
+  ${TextCSS.SubHead3};
 `;
 
 const Body1 = styled.span`
-  ${TextCSS.Body1}
+  ${TextCSS.Body1};
 `;
 
 const Body2 = styled.span`
-  ${TextCSS.Body2}
+  ${TextCSS.Body2};
 `;
 
 const BodyText1 = styled.span`
-  ${TextCSS.BodyText1}
+  ${TextCSS.BodyText1};
 `;
 
 const LetterText1 = styled.span`
-  ${TextCSS.LetterText1}
+  ${TextCSS.LetterText1};
 `;
 
 const TX = {
