@@ -41,14 +41,14 @@ const ItemImageWrapper = styled.div`
   margin-bottom: 28px;
 `;
 const ItemOpenStatus = styled.div<{ openStatus: number }>`
-  background-color: ${({ openStatus }) => {
+  background-color: ${({ openStatus, theme }) => {
     if (openStatus === 1) {
-      return ({ theme }) => theme.colors.black001;
+      return theme.colors.black001;
     }
     if (openStatus === 2) {
-      return ({ theme }) => theme.colors.grey003;
+      return theme.colors.grey003;
     }
-    return ({ theme }) => theme.colors.white_grey001;
+    return theme.colors.white_grey001;
   }};
   border-radius: 12px;
   padding-inline: 14px;
@@ -71,14 +71,14 @@ const TitleText = styled(TX.SubHead2)`
 `;
 
 const InnerText = styled(TX.Body1)<{ openStatus?: number }>`
-  color: ${({ openStatus }) => {
+  color: ${({ openStatus, theme }) => {
     if (openStatus === 1 || openStatus === 2) {
       return 'white';
     }
     if (openStatus === 0) {
-      return ({ theme }) => theme.colors.grey002;
+      return theme.colors.grey002;
     }
-    return ({ theme }) => theme.colors.grey002;
+    return theme.colors.grey002;
   }};
 `;
 

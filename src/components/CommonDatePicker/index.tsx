@@ -43,24 +43,18 @@ const CalendarFooter = styled.div`
 `;
 
 const StyledButton = styled.button<ButtonProps>`
-  background-color: ${({ confirm }) =>
-    confirm
-      ? ({ theme }) => theme.colors.black001
-      : ({ theme }) => theme.colors.white_grey001};
-  color: ${({ confirm }) =>
-    confirm
-      ? ({ theme }) => theme.colors.white_grey001
-      : ({ theme }) => theme.colors.black001};
+  background-color: ${({ confirm, theme }) =>
+    confirm ? theme.colors.black001 : theme.colors.white_grey001};
+  color: ${({ confirm, theme }) =>
+    confirm ? theme.colors.white_grey001 : theme.colors.black001};
   padding-block: 12px;
   width: 100%;
   border-radius: 6px;
 `;
 
 const ButtonText = styled(TX.Body1)<ButtonProps>`
-  color: ${({ confirm }) =>
-    confirm
-      ? ({ theme }) => theme.colors.white_grey001
-      : ({ theme }) => theme.colors.black001};
+  color: ${({ confirm, theme }) =>
+    confirm ? theme.colors.white_grey001 : theme.colors.black001};
 `;
 
 const SubtitleText = styled(TX.SubHead1)`
