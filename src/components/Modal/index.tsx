@@ -4,15 +4,80 @@ import { CSSTransition } from 'react-transition-group';
 
 import styled from 'styled-components';
 
-import modalBigBg from '@assets/images/modal_bg_big.png';
-import modalSmallBg from '@assets/images/modal_bg_small.png';
+import modalBigBg from '@assets/images/square_popup_big.png';
+import modalMediumBg from '@assets/images/square_popup_mid.png';
+import modalSmallBg from '@assets/images/square_popup_small.png';
 import Portal from '@components/Portal';
 
-const transitionName = `Modal`;
+const transitionName = 'Modal';
 
 interface IOverlay {
   duration: number;
 }
+
+interface IModalWrapperProps {
+  size?: string;
+}
+
+interface IProps {
+  size?: 'small' | 'medium' | 'big';
+  children?: React.ReactNode;
+  selector?: string;
+  isOpen: boolean;
+  onClose: () => void;
+  appearDuration?: number;
+  modalIcon?: React.ReactNode;
+  title?: string;
+  description?: string;
+  cancel?: string;
+  confirm?: string;
+  onConfirm?: () => void;
+}
+
+const getModalBackgroundImage = (size = 'small') => {
+  switch (size) {
+    case 'small':
+      return modalSmallBg;
+
+    case 'medium':
+      return modalMediumBg;
+
+    case 'big':
+      return modalBigBg;
+
+    default:
+      return modalSmallBg;
+  }
+};
+
+const getModalBackgroundAspectRatio = (size = 'small') => {
+  switch (size) {
+    case 'small':
+      return 2.9;
+
+    case 'medium':
+      return 1.87;
+
+    case 'big':
+      return 1.35;
+
+    default:
+      return 2.9;
+  }
+};
+
+const FlexColumnCenterDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const FlexRowDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 const Overlay = styled.div<IOverlay>`
   position: fixed;
@@ -22,6 +87,7 @@ const Overlay = styled.div<IOverlay>`
   right: 0;
   bottom: 0;
   overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,81 +121,45 @@ const Dim = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: 456px;
   position: relative;
   width: 100%;
-  margin-inline: 16px;
+  max-width: 456px;
+
+  padding: 16px;
 `;
 
-interface ModalProps {
-  button?: boolean;
-}
+const ModalWrapper = styled(FlexColumnCenterDiv)<IModalWrapperProps>`
+  position: relative;
 
-const ModalWrapper = styled.div<ModalProps>`
-  //border-radius: 8px;
-  //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  //background: #fff;
-
-  background-image: url(${({ button }) =>
-    button ? modalBigBg : modalSmallBg});
+  background-image: url(${({ size }) => getModalBackgroundImage(size)});
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  //height: 118px;
-  //max-height: calc(100vh - 16px);
+  aspect-ratio: ${({ size }) => getModalBackgroundAspectRatio(size)};
 
-  overflow: hidden auto;
-  position: relative;
   padding-block: 16px;
-  padding-inline: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 20px;
 `;
 
-const ModalHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const ModalHeader = styled(FlexRowDiv)`
   padding-block: 12px;
   width: 100%;
   border-bottom: 1px solid #e5e5e5;
 `;
 
-const ModalBody = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+const ModalBody = styled(FlexColumnCenterDiv)`
   padding-block: 12px;
   width: 100%;
 `;
 
-const ModalFooter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const ModalFooter = styled(FlexRowDiv)`
   flex-direction: row;
   padding-block: 12px;
   width: 100%;
 `;
 
-interface IProps {
-  children?: React.ReactNode;
-  selector?: string;
-  isOpen: boolean;
-  onClose: () => void;
-  appearDuration?: number;
-  modalIcon?: React.ReactNode;
-  title?: string;
-  description?: string;
-  cancel?: string;
-  confirm?: string;
-  onConfirm?: () => void;
-}
-
-const CommonModal = ({
+const Modal = ({
+  size = 'small',
   children = null,
   selector = undefined,
   isOpen,
@@ -141,29 +171,31 @@ const CommonModal = ({
   cancel = '',
   confirm = '',
   onConfirm = () => {},
-}: IProps) => {
-  return (
-    <CSSTransition
-      classNames={transitionName}
-      in={isOpen}
-      timeout={appearDuration}
-      unmountOnExit
-    >
-      <Portal selector={selector}>
-        <Overlay duration={appearDuration}>
-          <Dim onClick={onClose} />
-          <Container>
+}: IProps) => (
+  <CSSTransition
+    classNames={transitionName}
+    in={isOpen}
+    timeout={appearDuration}
+    unmountOnExit
+  >
+    <Portal selector={selector}>
+      <Overlay duration={appearDuration}>
+        <Dim onClick={onClose} />
+        <Container>
+          <ModalWrapper size={size}>
             {children || (
-              <ModalWrapper button={!!(cancel || confirm)}>
+              <>
                 <ModalHeader>
                   <div style={{ width: 24, height: 24 }} />
                   {modalIcon && modalIcon}
                   <div style={{ width: 24, height: 24 }}>X</div>
                 </ModalHeader>
+
                 <ModalBody>
                   <h2>{title}</h2>
                   <p>{description}</p>
                 </ModalBody>
+
                 {cancel || confirm ? (
                   <ModalFooter>
                     {/* TODO: 버튼 컴포넌트로 적용하기 */}
@@ -172,6 +204,7 @@ const CommonModal = ({
                         {confirm}
                       </button>
                     )}
+
                     {cancel && (
                       <button type="button" onClick={onClose}>
                         {cancel}
@@ -179,13 +212,13 @@ const CommonModal = ({
                     )}
                   </ModalFooter>
                 ) : null}
-              </ModalWrapper>
+              </>
             )}
-          </Container>
-        </Overlay>
-      </Portal>
-    </CSSTransition>
-  );
-};
+          </ModalWrapper>
+        </Container>
+      </Overlay>
+    </Portal>
+  </CSSTransition>
+);
 
-export default CommonModal;
+export default Modal;
