@@ -1,7 +1,8 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import LeeSeoyunWOFF from '@assets/fonts/LeeSeoyun.woff';
+import NanumSquareRoundWOFFB from '@assets/fonts/NanumSquareRoundB.woff';
 import NanumSquareRoundOTFB from '@assets/fonts/NanumSquareRoundOTFB.otf';
 import NanumSquareRoundOTFR from '@assets/fonts/NanumSquareRoundOTFR.otf';
+import NanumSquareRoundWOFFR from '@assets/fonts/NanumSquareRoundR.woff';
 import NotoSansKRRegular from '@assets/fonts/NotoSansKRRegular.otf';
 
 export default `
@@ -16,14 +17,16 @@ export default `
     font-family: 'NanumSquareRoundOTFR';
     font-weight: 400;
     font-style: normal;
-    src: url(${NanumSquareRoundOTFR}) format('otf');
+    src: url(${NanumSquareRoundOTFR}) format('otf'),
+        url(${NanumSquareRoundWOFFR}) format('woff');
   }
 
   @font-face {
     font-family: 'NanumSquareRoundOTFB';
     font-weight: 700;
     font-style: normal;
-    src: url(${NanumSquareRoundOTFB}) format('otf');
+    src: url(${NanumSquareRoundOTFB}) format('otf'),
+    url(${NanumSquareRoundWOFFB}) format('woff');
   }
 
   @font-face {
