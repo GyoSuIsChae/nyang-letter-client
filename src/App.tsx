@@ -10,6 +10,7 @@ import CafeList from '@pages/Cafe/CafeList';
 import CreateCafe from '@pages/Cafe/CreateCafe';
 import Home from '@pages/Home';
 import MailBox from '@pages/Home/MailBox';
+import Main from '@pages/Home/Main';
 
 const App: React.FC = () => {
   const accessToken = true;
@@ -32,6 +33,7 @@ const App: React.FC = () => {
       <Route path={PATH_NAMES.CAFE_CREATE} element={<CreateCafe />} />
       <Route path={PATH_NAMES.CAFE_LIST} element={<CafeList />} />
       <Route path={PATH_NAMES.MAIL_BOX} element={<MailBox />} />
+      <Route path={PATH_NAMES.MAIN} element={<Main />} />
       <Route path="/button" element={<ButtonTestPage />} />
     </Routes>
   );
