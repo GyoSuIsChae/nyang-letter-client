@@ -74,7 +74,8 @@ const SubHead2 = css`
   font-family: 'NanumSquareRoundOTFB';
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 1rem;
-  line-height: -0.02em;
+  line-height: 115%;
+  letter-spacing: -0.02em;
 `;
 
 const SubHead3 = css`

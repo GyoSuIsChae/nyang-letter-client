@@ -101,3 +101,76 @@ export const MOCK_CAFE_LIST = [
     endAt: '2021-08-31T00:00:00.000Z',
   },
 ];
+
+export const MOCK_MAIL_LIST = [
+  {
+    id: 1,
+    title: '메일1',
+    description: '메일1 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 2,
+    title: '메일2',
+    description: '메일2 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 3,
+    title: '메일3',
+    description: '메일3 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 4,
+    title: '메일4',
+    description: '메일4 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 5,
+    title: '메일5',
+    description: '메일5 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 6,
+    title: '메일6',
+    description: '메일6 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 7,
+    title: '메일7',
+    description: '메일7 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 8,
+    title: '메일8',
+    description: '메일8 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 9,
+    title: '메일9',
+    description: '메일9 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+  {
+    id: 10,
+    title: '메일10',
+    description: '메일10 설명',
+    image: 'https://via.placeholder.com/168',
+    isOpened: false,
+  },
+];

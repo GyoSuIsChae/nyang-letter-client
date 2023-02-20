@@ -5,6 +5,7 @@ const PATH_NAMES = {
   NICKNAME: '/auth/nickname',
   CAFE_CREATE: '/cafe/create',
   CAFE_LIST: '/cafe/list',
+  MAIL_BOX: '/home/mailbox',
 } as const;
 
 export { PATH_NAMES };
