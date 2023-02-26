@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import BackButtonImage from '@assets/images/btn_back.png';
+import BackButtonImage from '@assets/images/btn_back_1.png';
 import { TX } from '@components/Text';
 
 interface IHeaderProps {
