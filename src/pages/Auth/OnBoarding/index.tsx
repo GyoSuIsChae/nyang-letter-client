@@ -8,6 +8,7 @@ import DeleteAccountModal from '../DeleteAccountModal';
 import CommonButton from '@components/CommonButton';
 import { TX, TextCSS } from '@components/Text';
 import { PATH_NAMES } from '@constants/pages';
+import Tutorial from '@pages/Home/Tutorial';
 
 const FlexColumnCenterDiv = styled.div`
   display: flex;
@@ -97,6 +98,7 @@ const OnBoarding: React.FC = () => {
       <MiddleWrapper>
         <AuthButton onClick={onAuthClick}>로그인 / 회원가입</AuthButton>
         <DeleteAccountModal />
+        <Tutorial />
 
         <div>
           <Rectangle />
