@@ -14,117 +14,118 @@ const DefaultTextCSS = css<TextProps>`
 `;
 
 const Display1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'LeeSeoyun';
   font-size: 1.75rem;
   line-height: 125%;
-  letter-spacing: -1%;
+  letter-spacing: -0.01em;
 `;
 
 const Head1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'LeeSeoyun';
   font-size: 1.375rem;
   line-height: 130%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 `;
 
 const Head2 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'LeeSeoyun';
   font-size: 1.375rem;
   line-height: 130%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 `;
 
 const Head3 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'LeeSeoyun';
   font-size: 1.5rem;
   line-height: 130%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 `;
 
 const Head4 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'LeeSeoyun';
   font-size: 1.625rem;
   line-height: 125%;
-  letter-spacing: -1%;
+  letter-spacing: -0.01em;
 `;
 
 const SubHead1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NanumSquareRoundOTFB';
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 0.875rem;
   line-height: 145%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 `;
 
 const SubHead2 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NanumSquareRoundOTFB';
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 1rem;
-  line-height: -2%;
+  line-height: 115%;
+  letter-spacing: -0.02em;
 `;
 
 const SubHead3 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NanumSquareRoundOTFB';
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 1.125rem;
   line-height: 145%;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
 `;
 
 const Body1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NanumSquareRoundOTFR';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   font-size: 0.875rem;
   line-height: 20px;
-  letter-spacing: -0.2%;
+  letter-spacing: -0.02em;
 `;
 
 const Body2 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NanumSquareRoundOTFR';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   font-size: 1rem;
   line-height: 20px;
-  letter-spacing: -0.2%;
+  letter-spacing: -0.02em;
 `;
 
 const BodyText1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NotoSansKR-Regular';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   font-size: 1rem;
   line-height: 165%;
-  letter-spacing: -0.2%;
+  letter-spacing: -0.02em;
 `;
 
 const LetterText1 = css`
-  ${DefaultTextCSS}
+  ${DefaultTextCSS};
 
   font-family: 'NotoSansKR-Regular';
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   font-size: 1rem;
   line-height: 200%;
-  letter-spacing: -0.2%;
+  letter-spacing: -0.02em;
 `;
 
 const TextCSS = {
