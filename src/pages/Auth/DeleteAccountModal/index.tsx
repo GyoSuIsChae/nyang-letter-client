@@ -42,7 +42,7 @@ const CircleImageWrapper = styled.div`
 `;
 
 const ModalHeader = styled(FlexRowDiv)`
-  margin-bottom: 26px;s
+  margin-bottom: 26px;
 `;
 
 const ModalContentContainer = styled(FlexColumnCenterDiv)`

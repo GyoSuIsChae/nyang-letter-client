@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import CloseButtonImage from '@assets/images/btn_close.png';
 
 interface ICloseButton {
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
   onClick?: () => void;
 }
 
