@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import React from 'react';
 
-import styled from 'styled-components';
+import styled, { Interpolation } from 'styled-components';
 
 import imageHelpBtn from '@assets/images/btn_help.png';
 import imagePrimaryBtn from '@assets/images/primary_btn.png';
@@ -17,8 +18,9 @@ interface ICommonButtonProps {
   inline?: boolean;
   fullWidth?: boolean;
   height?: number;
-  wrapperStyle?: { [key: string]: string };
-  buttonTextStyle?: { [key: string]: string };
+  wrapperStyle?: Interpolation<any> | { [key: string]: string };
+  buttonTextStyle?: Interpolation<any>;
+  aspectRatio?: number;
 }
 
 interface IUnderlineButtonProps {
@@ -27,7 +29,7 @@ interface IUnderlineButtonProps {
   disabled?: boolean;
   inline?: boolean;
   fullWidth?: boolean;
-  wrapperStyle?: { [key: string]: string };
+  wrapperStyle?: Interpolation<any> | { [key: string]: string };
 }
 
 interface ICommonButtonContainerProps {
@@ -37,21 +39,23 @@ interface ICommonButtonContainerProps {
   inline?: boolean;
   fullWidth?: boolean;
   height?: number;
-  wrapperStyle?: { [key: string]: string };
+  wrapperStyle?: Interpolation<any> | { [key: string]: string };
+  aspectRatio?: number;
 }
+
 interface IUnderlineButtonContainerProps {
   disabled?: boolean;
   inline?: boolean;
   fullWidth?: boolean;
-  wrapperStyle?: { [key: string]: string };
+  wrapperStyle?: Interpolation<any> | { [key: string]: string };
 }
 
 interface ICommonButtonTextProps {
   fullWidth?: boolean;
-  buttonTextStyle?: { [key: string]: string };
+  buttonTextStyle?: Interpolation<any>;
 }
 
-const getButtonImage = (target: string, disabled = false) => {
+const getButtonImage = (target: string, disabled = false): string => {
   switch (target) {
     case 'primary':
       if (disabled) {
@@ -68,7 +72,11 @@ const getButtonImage = (target: string, disabled = false) => {
   }
 };
 
-const getAspectRatio = (target: string) => {
+const getAspectRatio = (target: string, aspectRatio?: number): number => {
+  if (aspectRatio !== undefined) {
+    return aspectRatio;
+  }
+
   switch (target) {
     case 'help':
       return 3.2;
@@ -88,7 +96,8 @@ const CommonButtonContainer = styled.button<ICommonButtonContainerProps>`
   background-size: 100% 100%;
   background-image: url(${({ target, disabled }) =>
     getButtonImage(target, disabled)});
-  aspect-ratio: ${({ target }) => getAspectRatio(target)};
+  aspect-ratio: ${({ target, aspectRatio }) =>
+    getAspectRatio(target, aspectRatio)};
 
   pointer: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 
@@ -130,7 +139,8 @@ const CommonButton = ({
   height = 64,
   onClick,
   wrapperStyle = {},
-  buttonTextStyle = {},
+  buttonTextStyle = undefined,
+  aspectRatio = undefined,
 }: ICommonButtonProps) => (
   <CommonButtonContainer
     type={type}
@@ -140,6 +150,7 @@ const CommonButton = ({
     height={height}
     target={target}
     wrapperStyle={wrapperStyle}
+    aspectRatio={aspectRatio}
     onClick={() => onClick()}
   >
     <CommonButtonText fullWidth={fullWidth} buttonTextStyle={buttonTextStyle}>

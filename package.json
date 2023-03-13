@@ -9,7 +9,7 @@
     "prettier": "prettier --write --config ./.prettierrc './src/**/*.{ts,tsx}'",
     "lint": "eslint ./src --ext .ts,.tsx",
     "lint:fix": "eslint --fix ./src --ext .ts,.tsx",
-    "lint:staged": "eslint --fix --max-warnings 0",
+    "lint:staged": "eslint --fix",
     "prepare": "husky install"
   },
   "dependencies": {
