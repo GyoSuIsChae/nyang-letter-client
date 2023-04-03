@@ -9,6 +9,7 @@ import HamburgerImage from '@assets/images/btn_hamberger.png';
 import LogoImage from '@assets/images/logo_sample.png';
 import CommonSpace from '@components/CommonSpace';
 import { ArrivalLetters } from '@components/Main';
+import Letters from '@components/Main/Letters';
 import { TX } from '@components/Text';
 
 const MainContainer = styled.div`
@@ -167,7 +168,8 @@ const Main = () => {
         </HomeContent>
       </HomeCafe>
       <CommonSpace height={12} />
-      <ArrivalLetters />
+      {/* <ArrivalLetters /> */}
+      <Letters />
     </MainContainer>
   );
 };
