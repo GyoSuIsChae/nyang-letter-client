@@ -7,6 +7,8 @@ import styled from 'styled-components';
 import BgMain from '@assets/images/bg_main.png';
 import HamburgerImage from '@assets/images/btn_hamberger.png';
 import LogoImage from '@assets/images/logo_sample.png';
+import CommonSpace from '@components/CommonSpace';
+import { ArrivalLetters } from '@components/Main';
 import { TX } from '@components/Text';
 
 const MainContainer = styled.div`
@@ -68,6 +70,7 @@ const MenuButton = styled.img.attrs({
 `;
 
 const HomeCafe = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,8 +114,6 @@ const OpenText = styled(TX.SubHead1)`
   color: #ffffff;
 `;
 
-const HomeLetterList = styled.div``;
-
 const Main = () => {
   const navigate = useNavigate();
   const [scrollKey, setScrollKey] = useState<number>(0);
@@ -121,20 +122,20 @@ const Main = () => {
     useState<string>('가가가가가가가가가가가가가가가');
   const [openDDay, setOpenDDay] = useState<number>(100);
 
-  const scrollDuration = (6000 / latestLetter.length) * 4;
+  // const scrollDuration = (6000 / latestLetter.length) * 4;
   const onLogoButtonClick = () => {
     navigate(0);
   };
-  const textScrollAnim = useSpring({
-    from: { transform: 'translate(2%,0)' },
-    to: { transform: `translate(-${195 / latestLetter.length}%,0)` },
-    config: { duration: scrollDuration },
-    reset: true,
-    reverse: scrollKey % 2 === 1,
-    onRest: () => {
-      setScrollKey((prev) => prev + 1);
-    },
-  });
+  // const textScrollAnim = useSpring({
+  //   from: { transform: 'translate(2%,0)' },
+  //   to: { transform: `translate(-${195 / latestLetter.length}%,0)` },
+  //   config: { duration: scrollDuration },
+  //   reset: true,
+  //   reverse: scrollKey % 2 === 1,
+  //   onRest: () => {
+  //     setScrollKey((prev) => prev + 1);
+  //   },
+  // });
   return (
     <MainContainer>
       <Header>
@@ -144,9 +145,9 @@ const Main = () => {
           }}
         />
         <HeaderInfoWrapper>
-          <AnimatedHeaderInfo style={textScrollAnim}>
-            {`오늘 도착한 편지: ${latestLetter}`}
-          </AnimatedHeaderInfo>
+          {/* <AnimatedHeaderInfo style={textScrollAnim}> */}
+          {`오늘 도착한 편지: ${latestLetter}`}
+          {/* </AnimatedHeaderInfo> */}
         </HeaderInfoWrapper>
         <MenuButton
           onClick={() => {
@@ -160,10 +161,13 @@ const Main = () => {
           <OpenWrapper>
             <OpenText>{`D - ${openDDay}`}</OpenText>
           </OpenWrapper>
-          <img src="https://via.placeholder.com/220x160" alt="sample" />
+          <div style={{ height: 160 }}>
+            <img src="https://via.placeholder.com/220x160" alt="sample" />
+          </div>
         </HomeContent>
       </HomeCafe>
-      <HomeLetterList />
+      <CommonSpace height={12} />
+      <ArrivalLetters />
     </MainContainer>
   );
 };
